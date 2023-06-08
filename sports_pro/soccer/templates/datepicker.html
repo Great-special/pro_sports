@@ -1,0 +1,27 @@
+{% comment %} {% load widget_tweaks %} {% endcomment %}
+
+
+
+
+<form id="myForm" method="get">
+    <input name="date" type="date" id="date" value={{today}}>
+    
+</form>
+
+
+<script>
+    $('#date').change(function(){
+        $('#myForm').submit()
+    });
+
+    
+    function getVal(value) {
+        console.log(value);
+        var year = value.slice(0, 4);
+        var month = value.slice(5,7);
+        var day = value.slice(8,10);
+        console.log(month, year, day);
+        var date = year + month + day
+        console.log(date)
+    }
+</script>

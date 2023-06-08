@@ -1,0 +1,1178 @@
+
+
+<style>
+    .ul,
+    .new-nav {
+        width: 100%;
+    }
+    .nav-mobile{display: none;}
+    .ul {
+        display: flex;
+        gap: 15px;
+        overflow-x: scroll;
+    }
+    .ul::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .ul li {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .ul li p{
+        color: white;
+    }
+    .ul-down {
+        display: none;
+        position: absolute;
+        top: 50px;
+    }
+    
+    .ul-down li {
+        color: white;
+        cursor: pointer;
+        width: 200px;
+        border: 1px grey;
+    }
+    .ul-down li a {
+        color: white;
+    }
+    .ul-down li:hover {
+        background-color: #01d099;
+        color: white;
+    }        
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    @media screen and (max-width: 825px) {
+        .ul{
+            display: none;
+        }
+        .nav-mobile{
+            display: block;
+        }
+    }
+</style>
+<nav class="new-nav" style="background-color: #222;">
+    <ul class="ul">
+        <li>
+            <p>NBA</p>
+            <ul class="ul-down">
+                <li><a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "play-offs" %}" style="font-size:14px;">Play offs</a></li>
+                <li><a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "regular-season" %}" style="font-size:14px;">Regular Season</a></li>
+                <li><a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "pre-season" %}" style="font-size:14px;">Pre-Season</a></li>
+                <li><a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "all-star-game" %}" style="font-size:14px;">All-Star Game</a></li>
+                <li><a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "california-classic-summer-league" %}" style="font-size:14px;">California Classic Summer</a></li>
+                <li><a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "salt-lake-city-summer-league" %}" style="font-size:14px;">Salt Lake City Summer</a></li>
+                <li><a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "las-vegas-summer-league-play-off" %}" style="font-size:14px;">Las Vegas Summer Play-offs</a></li>
+                <li><a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "las-vegas-summer-league" %}" style="font-size:14px;">Las Vegas Summer League</a></li>
+                <li><a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "las-vegas-summer-league-placement-matches" %}" style="font-size:14px;">Las Vegas Summer League Placement Matches</a></li>
+            </ul>
+        </li>
+        <li>
+            <p>NCAA</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "ncaa" "march-madness" %}" style="font-size:14px;">March Madness</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "ncaa" "ncaa-men" %}" style="font-size:14px;">Regular Season</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "ncaa" "national-invitation-tournament" %}" style="font-size:14px;">National Invitation Tournament</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>EuroLeague</p>
+
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "euro-league" "euroleague-play-off" %}" style="font-size:14px;">Play-off</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "euro-league" "euroleague-regular-season" %}" style="font-size:14px;">Regular Season</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>EuroBasket</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "play-off" %}" style="font-size:14px;">Play-off</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "group-a" %}" style="font-size:14px;">Group A</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "group-b" %}" style="font-size:14px;">Group B</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "group-c" %}" style="font-size:14px;">Group C</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "group-d" %}" style="font-size:14px;">Group D</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-a" %}" style="font-size:14px;">Qualification Group A</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-b" %}" style="font-size:14px;">Qualification Group B</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-c" %}" style="font-size:14px;">Qualification Group C</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-d" %}" style="font-size:14px;">Qualification Group D</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-e" %}" style="font-size:14px;">Qualification Group E</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-f" %}" style="font-size:14px;">Qualification Group F</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-g" %}" style="font-size:14px;">Qualification Group G</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-h" %}" style="font-size:14px;">Qualification Group H</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <p>EuroBasket Women</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "group-a" %}" style="font-size:14px;">Group A</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "group-b" %}" style="font-size:14px;">Group B</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "group-c" %}" style="font-size:14px;">Group C</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "group-d" %}" style="font-size:14px;">Group D</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-a" %}" style="font-size:14px;">Qualification Group A</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-b" %}" style="font-size:14px;">Qualification Group B</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-c" %}" style="font-size:14px;">Qualification Group C</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-d" %}" style="font-size:14px;">Qualification Group D</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-e" %}" style="font-size:14px;">Qualification Group E</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-f" %}" style="font-size:14px;">Qualification Group F</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-g" %}" style="font-size:14px;">Qualification Group G</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-h" %}" style="font-size:14px;">Qualification Group H</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-i" %}" style="font-size:14px;">Qualification Group I</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-j" %}" style="font-size:14px;">Qualification Group J</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>EuroBasket U18</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-play-off" %}" style="font-size:14px;">Division A Play-off</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-placement-matches" %}" style="font-size:14px;">Division A Placement Matches</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-group-a" %}" style="font-size:14px;">Division A Group A</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-group-b" %}" style="font-size:14px;">Division A Group B</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-group-c" %}" style="font-size:14px;">Division A Group C</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-group-d" %}" style="font-size:14px;">Division A Group D</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-play-off" %}" style="font-size:14px;">Division B Play-off</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-placement-matches" %}" style="font-size:14px;">Division B Placement Matches</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-a" %}" style="font-size:14px;">Division B Group A</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-b" %}" style="font-size:14px;">Division B Group B</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-c" %}" style="font-size:14px;">Division B Group C</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-d" %}" style="font-size:14px;">Division B Group D</a>  
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-e" %}" style="font-size:14px;">Division B Group E</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-f" %}" style="font-size:14px;">Division B Group F</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-c-play-off" %}" style="font-size:14px;">Division C Play-off</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-c-placement-matches" %}" style="font-size:14px;">Division C Placement Matches</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-c-group-a" %}" style="font-size:14px;">Division C Group A</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-c-group-b" %}" style="font-size:14px;">Division C Group B</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>BNXT League</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "bnxt-league" "bnxt-league-elite-gold" %}" style="font-size:14px;">Elite Gold</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "bnxt-league" "bnxt-league-elite-silver" %}" style="font-size:14px;">Elite Silver</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "bnxt-league" "domestic-belgium" %}" style="font-size:14px;">Domestic Belgium</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "bnxt-league" "domestic-netherlands" %}" style="font-size:14px;">Domestic Netherlands</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>WNBA</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "wnba" "wnba-play-off" %}" style="font-size:14px;">Play-off</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "wnba" "wnba-regular-season" %}" style="font-size:14px;">wnba-regular-season</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "wnba" "all-star-game" %}" style="font-size:14px;">All-Star Game</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Argentina</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "argentina" "lnb" %}" style="font-size:14px;">LNB</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Australia</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "australia" "nbl-play-off" %}" style="font-size:14px;">NBL Play-off</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "australia" "nbl" %}" style="font-size:14px;">NBL</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Austria</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "austria" "superliga-winners-stage" %}" style="font-size:14px;">Superliga Winners Stage</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "austria" "superliga" %}" style="font-size:14px;">Superliga</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "austria" "superliga-play-off" %}" style="font-size:14px;">Superliga Play-off</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "austria" "superliga-losers-stage" %}" style="font-size:14px;">Superliga Losers Stage</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Belarus</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belarus" "premier-league-play-off" %}" style="font-size:14px;">Premier League Play-off</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belarus" "premier-league-group-a" %}" style="font-size:14px;">Premier League Group A</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belarus" "premier-league-group-b" %}" style="font-size:14px;">Premier League Group B</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Belgium</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belgium" "pro-basketball-league-play-off" %}" style="font-size:14px;">Pro Basketball League Play-off</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belgium" "pro-basketball-league-2020-2021" %}" style="font-size:14px;">Pro Basketball League</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Canada</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "canada" "nbl" %}" style="font-size:14px;">NBL</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>China</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "china" "cba-play-off" %}" style="font-size:14px;">CBA Play-off</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "china" "cba" %}" style="font-size:14px;">CBA</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p> Croatia</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "croatia" "premijer-liga-championship-group" %}" style="font-size:14px;">Premijer liga Championship Group</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "croatia" "premijer-liga" %}" style="font-size:14px;">Premijer liga</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "croatia" "premijer-liga-relegation-group" %}" style="font-size:14px;">Premijer liga Relegation Group</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Czech Republic</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "czech-republic" "nbl" %}" style="font-size:14px;">NBL</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "czech-republic" "nbl-play-off" %}" style="font-size:14px;">NBL Play-off</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "czech-republic" "nbl-group-a1" %}" style="font-size:14px;">NBL Group A1</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "czech-republic" "nbl-group-a2" %}" style="font-size:14px;">NBL Group A2</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <p>Denmark</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "denmark" "basket-ligaen-winners-stage" %}" style="font-size:14px;">Basket Ligaen Winners Stage</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "denmark" "basket-ligaen" %}" style="font-size:14px;">Basket Ligaen</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "denmark" "dameligaen" %}" style="font-size:14px;">Dameligaen</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "denmark" "dameligaen-play-off" %}" style="font-size:14px;">Dameligaen Playoff</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p> Finland</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "korisliiga" %}" style="font-size:14px;">Korisliiga</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "korisliiga-relegation-group" %}" style="font-size:14px;">Korisliiga Relegation Group</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "korisliiga-championship-group" %}" style="font-size:14px;">Korisliiga Championship Group</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "naisten-korisliiga" %}" style="font-size:14px;">Korisliiga Women</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "naisten-korisliiga-playoff-group" %}" style="font-size:14px;">Korisliiga Women Playoff Group</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <p>France</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "france" "lnb-pro-a" %}" style="font-size:14px;">LNB Pro A</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "france" "lnb-pro-a-play-off" %}" style="font-size:14px;">LNB Pro A Play-off</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "france" "french-cup" %}" style="font-size:14px;">French Cup</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Germany</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "germany" "bbl" %}" style="font-size:14px;">BBL</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "germany" "bbl-cup" %}" style="font-size:14px;">BBL Cup</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <p>Indonesia</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "indonesia" "ibl" %}" style="font-size:14px;">IBL</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Italy</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "italy" "lega-basket-serie-a" %}" style="font-size:14px;">Lega Basket Serie A</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "italy" "serie-a1-women" %}" style="font-size:14px;">Women's Serie A1</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "italy" "super-cup-play-off" %}" style="font-size:14px;">Super Cup Play-off</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <p>Japan</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "japan" "b-league" %}" style="font-size:14px;">B.League</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Netherlands</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "holland" "dbl-winners-stage" %}" style="font-size:14px;">DBL Winners Stage</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "holland" "dbl-losers-stage" %}" style="font-size:14px;">DBL Losers Stage</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "holland" "dbl-play-off" %}" style="font-size:14px;">DBL Play-off</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <p>Norway</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "norway" "blno" %}" style="font-size:14px;">BLNO</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "norway" "kvinneligaen" %}" style="font-size:14px;">Kvinneligaen</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p> Poland</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "poland" "energa-basket-liga" %}" style="font-size:14px;">Energa Basket Liga</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "poland" "energa-basket-liga-women" %}" style="font-size:14px;">Women's Energa Basket Liga</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <p>Slovenia</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "slovenia" "liga-nova-kbm" %}" style="font-size:14px;">NPFL Group A</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Spain</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "spain" "liga-acb" %}" style="font-size:14px;">Liga ACB</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "spain" "leb-oro" %}" style="font-size:14px;">LEB Oro</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "spain" "super-cup" %}" style="font-size:14px;">Super Cup</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <p>Taiwan</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "taiwan" "sbl-1st-stage" %}" style="font-size:14px;">SBL 1st Stage</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "taiwan" "wsbl" %}" style="font-size:14px;">WSBL</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Ukraine</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "ukraine" "superliga-favorit-sport" %}" style="font-size:14px;">FBU Superleague</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <p>USA</p>
+            <ul class="ul-down">
+                <li>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "usa" "big3-play-off" %}" style="font-size:14px;">BIB3 Play-off</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "usa" "big3" %}" style="font-size:14px;">BIB3</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        const li = document.querySelectorAll(".ul li p")
+        const ul = document.querySelector(".ul")
+        const overlay = document.querySelector(".overlay")
+        const drop = document.querySelectorAll(".ul-down")
+        const items = document.querySelectorAll(".ul-down li")
+
+        for (let i = 0; i < li.length; i++) {
+            drop.forEach(x => x.style.display = 'none');
+            li[i].addEventListener('click', () => {
+                if (drop[i].style.display === 'block') {
+                    drop.forEach(x => x.style.display = 'none');
+                    drop[i].style.display = 'none';
+                    ul.style.height = '50px'
+                } else {
+                    drop.forEach(x => x.style.display = 'none');
+                    drop[i].style.display = 'block';
+                    //console.log(drop[i].clientHeight, drop[i].height)
+                    ul.style.height = `${drop[i].clientHeight + 70}px`
+                }
+            })
+        }
+        overlay.addEventListener('click', () => {
+            drop.forEach(x => x.style.display = 'none');
+            //drop[i].style.display = 'none';
+            ul.style.height = '50px'
+        })
+        for (let i = 0; i < items.length; i++) {
+            items[i].addEventListener("click", function() {
+                this.parentElement.style.display = 'none';
+            })
+        }
+    </script>
+</nav>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light nav-mobile"  style="background-color: #222;">
+    {% comment %} <a class="navbar-brand" href="#">PythonGuides</a> {% endcomment %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"  style="background-color: #222;">
+        <ul class="navbar-nav mr-auto" >
+  
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                    NBA
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "play-offs" %}" style="font-size:14px;">Play offs</a>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "regular-season" %}" style="font-size:14px;">Regular Season</a>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "pre-season" %}" style="font-size:14px;">Pre-Season</a>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "all-star-game" %}" style="font-size:14px;">All-Star Game</a>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "california-classic-summer-league" %}" style="font-size:14px;">California Classic Summer</a>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "salt-lake-city-summer-league" %}" style="font-size:14px;">Salt Lake City Summer</a>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "las-vegas-summer-league-play-off" %}" style="font-size:14px;">Las Vegas Summer Play-offs</a>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "las-vegas-summer-league" %}" style="font-size:14px;">Las Vegas Summer League</a>
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "nba" "las-vegas-summer-league-placement-matches" %}" style="font-size:14px;">Las Vegas Summer League Placement Matches</a>
+                </div>
+            </li>
+             
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                  NCAA
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "ncaa" "march-madness" %}" style="font-size:14px;">March Madness</a>
+                
+                <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "ncaa" "ncaa-men" %}" style="font-size:14px;">Regular Season</a>
+                
+                <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "ncaa" "national-invitation-tournament" %}" style="font-size:14px;">National Invitation Tournament</a>
+                
+              </div>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                  EuroLeague
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               
+                <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "euro-league" "euroleague-play-off" %}" style="font-size:14px;">Play-off</a>
+                
+                <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "euro-league" "euroleague-regular-season" %}" style="font-size:14px;">Regular Season</a>
+                
+              </div>
+            </li>
+  
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                  EuroBasket
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "play-off" %}" style="font-size:14px;">Play-off</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "group-a" %}" style="font-size:14px;">Group A</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "group-b" %}" style="font-size:14px;">Group B</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "group-c" %}" style="font-size:14px;">Group C</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "group-d" %}" style="font-size:14px;">Group D</a>
+             
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-a" %}" style="font-size:14px;">Qualification Group A</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-b" %}" style="font-size:14px;">Qualification Group B</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-c" %}" style="font-size:14px;">Qualification Group C</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-d" %}" style="font-size:14px;">Qualification Group D</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-e" %}" style="font-size:14px;">Qualification Group E</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-f" %}" style="font-size:14px;">Qualification Group F</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-g" %}" style="font-size:14px;">Qualification Group G</a>
+                
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket" "qualification-group-h" %}" style="font-size:14px;">Qualification Group H</a>
+                
+              </div>
+            </li>
+  
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                  eurobasket-women
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "group-a" %}" style="font-size:14px;">Group A</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "group-b" %}" style="font-size:14px;">Group B</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "group-c" %}" style="font-size:14px;">Group C</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "group-d" %}" style="font-size:14px;">Group D</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-a" %}" style="font-size:14px;">Qualification Group A</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-b" %}" style="font-size:14px;">Qualification Group B</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-c" %}" style="font-size:14px;">Qualification Group C</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-d" %}" style="font-size:14px;">Qualification Group D</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-e" %}" style="font-size:14px;">Qualification Group E</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-f" %}" style="font-size:14px;">Qualification Group F</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-g" %}" style="font-size:14px;">Qualification Group G</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-h" %}" style="font-size:14px;">Qualification Group H</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-i" %}" style="font-size:14px;">Qualification Group I</a>
+              
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-women" "qualification-group-j" %}" style="font-size:14px;">Qualification Group J</a>
+                
+              </div>
+            </li>
+  
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                  eurobasket U18
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-play-off" %}" style="font-size:14px;">Division A Play-off</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-placement-matches" %}" style="font-size:14px;">Division A Placement Matches</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-group-a" %}" style="font-size:14px;">Division A Group A</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-group-b" %}" style="font-size:14px;">Division A Group B</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-group-c" %}" style="font-size:14px;">Division A Group C</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-a-group-d" %}" style="font-size:14px;">Division A Group D</a>
+               
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-play-off" %}" style="font-size:14px;">Division B Play-off</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-placement-matches" %}" style="font-size:14px;">Division B Placement Matches</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-a" %}" style="font-size:14px;">Division B Group A</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-b" %}" style="font-size:14px;">Division B Group B</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-c" %}" style="font-size:14px;">Division B Group C</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-d" %}" style="font-size:14px;">Division B Group D</a>  
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-e" %}" style="font-size:14px;">Division B Group E</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-b-group-f" %}" style="font-size:14px;">Division B Group F</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-c-play-off" %}" style="font-size:14px;">Division C Play-off</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-c-placement-matches" %}" style="font-size:14px;">Division C Placement Matches</a>
+                
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-c-group-a" %}" style="font-size:14px;">Division C Group A</a>
+                
+                  <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "eurobasket-u18" "division-c-group-b" %}" style="font-size:14px;">Division C Group B</a>
+                
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    bnxt league
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "bnxt-league" "bnxt-league-elite-gold" %}" style="font-size:14px;">Elite Gold</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "bnxt-league" "bnxt-league-elite-silver" %}" style="font-size:14px;">Elite Silver</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "bnxt-league" "domestic-belgium" %}" style="font-size:14px;">Domestic Belgium</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "bnxt-league" "domestic-netherlands" %}" style="font-size:14px;">Domestic Netherlands</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    WNBA
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "wnba" "wnba-play-off" %}" style="font-size:14px;">Play-off</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "wnba" "wnba-regular-season" %}" style="font-size:14px;">wnba-regular-season</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "wnba" "all-star-game" %}" style="font-size:14px;">All-Star Game</a>
+                   
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Argentina
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "argentina" "lnb" %}" style="font-size:14px;">LNB</a>
+                   
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Australia
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "australia" "nbl-play-off" %}" style="font-size:14px;">NBL Play-off</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "australia" "nbl" %}" style="font-size:14px;">NBL</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Austria
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "austria" "superliga-winners-stage" %}" style="font-size:14px;">Superliga Winners Stage</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "austria" "superliga" %}" style="font-size:14px;">Superliga</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "austria" "superliga-play-off" %}" style="font-size:14px;">Superliga Play-off</a>
+                   
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "austria" "superliga-losers-stage" %}" style="font-size:14px;">Superliga Losers Stage</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Belarus
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belarus" "premier-league-play-off" %}" style="font-size:14px;">Premier League Play-off</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belarus" "premier-league-group-a" %}" style="font-size:14px;">Premier League Group A</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belarus" "premier-league-group-b" %}" style="font-size:14px;">Premier League Group B</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Belgium
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belgium" "pro-basketball-league-play-off" %}" style="font-size:14px;">Pro Basketball League Play-off</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "belgium" "pro-basketball-league-2020-2021" %}" style="font-size:14px;">Pro Basketball League</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Canada
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "canada" "nbl" %}" style="font-size:14px;">NBL</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    China
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "china" "cba-play-off" %}" style="font-size:14px;">CBA Play-off</a>
+                    
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "china" "cba" %}" style="font-size:14px;">CBA</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Croatia
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "croatia" "premijer-liga-championship-group" %}" style="font-size:14px;">Premijer liga Championship Group</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "croatia" "premijer-liga" %}" style="font-size:14px;">Premijer liga</a>
+                   
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "croatia" "premijer-liga-relegation-group" %}" style="font-size:14px;">Premijer liga Relegation Group</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    czech-republic
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "czech-republic" "nbl" %}" style="font-size:14px;">NBL</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "czech-republic" "nbl-play-off" %}" style="font-size:14px;">NBL Play-off</a>
+                   
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "czech-republic" "nbl-group-a1" %}" style="font-size:14px;">NBL Group A1</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "czech-republic" "nbl-group-a2" %}" style="font-size:14px;">NBL Group A2</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Denmark
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "denmark" "basket-ligaen-winners-stage" %}" style="font-size:14px;">Basket Ligaen Winners Stage</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "denmark" "basket-ligaen" %}" style="font-size:14px;">Basket Ligaen</a>
+                  
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "denmark" "dameligaen" %}" style="font-size:14px;">Dameligaen</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "denmark" "dameligaen-play-off" %}" style="font-size:14px;">Dameligaen Playoff</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Finland
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "korisliiga" %}" style="font-size:14px;">Korisliiga</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "korisliiga-relegation-group" %}" style="font-size:14px;">Korisliiga Relegation Group</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "korisliiga-championship-group" %}" style="font-size:14px;">Korisliiga Championship Group</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "naisten-korisliiga" %}" style="font-size:14px;">Korisliiga Women</a>
+                   
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "finland" "naisten-korisliiga-playoff-group" %}" style="font-size:14px;">Korisliiga Women Playoff Group</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    France
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "france" "lnb-pro-a" %}" style="font-size:14px;">LNB Pro A</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "france" "lnb-pro-a-play-off" %}" style="font-size:14px;">LNB Pro A Play-off</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "france" "french-cup" %}" style="font-size:14px;">French Cup</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Germany
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "germany" "bbl" %}" style="font-size:14px;">BBL</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "germany" "bbl-cup" %}" style="font-size:14px;">BBL Cup</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Indonesia
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "indonesia" "ibl" %}" style="font-size:14px;">IBL</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Italy
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "italy" "lega-basket-serie-a" %}" style="font-size:14px;">Lega Basket Serie A</a>
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "italy" "serie-a1-women" %}" style="font-size:14px;">Women's Serie A1</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "italy" "super-cup-play-off" %}" style="font-size:14px;">Super Cup Play-off</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Japan
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "japan" "b-league" %}" style="font-size:14px;">B.League</a>
+                   
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Netherlands
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "holland" "dbl-winners-stage" %}" style="font-size:14px;">DBL Winners Stage</a>
+                   
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "holland" "dbl-losers-stage" %}" style="font-size:14px;">DBL Losers Stage</a>
+                    
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "holland" "dbl-play-off" %}" style="font-size:14px;">DBL Play-off</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Norway
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "norway" "blno" %}" style="font-size:14px;">BLNO</a>
+                   
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "norway" "kvinneligaen" %}" style="font-size:14px;">Kvinneligaen</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Poland
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "poland" "energa-basket-liga" %}" style="font-size:14px;">Energa Basket Liga</a>
+                    
+                    <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "poland" "energa-basket-liga-women" %}" style="font-size:14px;">Women's Energa Basket Liga</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Slovenia
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "slovenia" "liga-nova-kbm" %}" style="font-size:14px;">NPFL Group A</a>
+                   
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Taiwan
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "taiwan" "sbl-1st-stage" %}" style="font-size:14px;">SBL 1st Stage</a>
+                   
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "taiwan" "wsbl" %}" style="font-size:14px;">WSBL</a>
+                   
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    Ukraine
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "ukraine" "superliga-favorit-sport" %}" style="font-size:14px;">FBU Superleague</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                    USA
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                        <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "usa" "big3-play-off" %}" style="font-size:14px;">BIB3 Play-off</a>
+                  
+                      <a class="dropdown-item" href="{% url 'basketball_resultsByleague' "usa" "big3" %}" style="font-size:14px;">BIB3</a>
+                    
+                </div>
+            </li>
+        </ul>
+    </div>
+  
+</nav>

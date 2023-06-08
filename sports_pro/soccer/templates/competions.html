@@ -1,0 +1,303 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+    <body>
+        
+
+        <!-- layout-->
+        <div id="layout">
+
+
+            {% include 'header.html'%}
+
+
+            <!-- Section Title -->
+            <div class="section-title" style="background:url({% static 'img/slide/1.jpg' %})">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            {% if 'fixtures' in request.path %}
+                            <h1><strong style="color: #01d099;">Fixtures</strong></h1>
+                            {% elif 'results' in request.path %}
+                            <h1><strong style="color: #01d099;">Results</strong></h1>
+                            {% else %}
+                            <h1><strong style="color: #01d099;">Tables</strong></h1>
+                            {% endif %}
+                            
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>Inner Page</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Section Title -->
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info" style="background:url({% static 'img/slide/1.jpg' %}); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100vh; ">
+
+                <div class="container paddings-mini">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="clear-title" style="color: #01d099;">Matches</h3>
+                            
+                            <h3>
+                                {{Competion_name}} ({{stage_name}})
+                            </h3>
+                           
+                            {% include "competions_navbar.html" %}
+                        </div>
+
+                        <div class="col">
+                            {% include "button_competions.html" %}
+                        </div>
+
+                        <div class="col-lg-12">
+                            <table class="table-striped table-responsive table-hover"> 
+                                {% comment %} {% if 'table' not in request.path %}
+                                <thead>
+                                    <tr>
+                                        <th>Team A</th>
+                                        <th class="text-center">VS</th>
+                                        <th>Team B</th>
+                                    </tr>
+                                </thead>
+                                {% endif %} {% endcomment %}
+                                {% if 'fixtures' in request.path %}
+
+                                <div class="recent-results " >   
+                                    <div class="info-results"> 
+                                        <ul>    
+                                            <li>
+                                                <span class="head" style="color: #01d099;">
+                                                    Fixtures<span class="date">27 Jun 2017</span>
+                                                </span>
+                                                {% for game in Fixtures %}
+                                                <div class="goals-result">
+                                                    <a href="" style="width: 150px;">
+                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T1.0.Img}}" alt="">
+                                                        {{game.T1.0.Nm}}
+                                                    </a>
+                                                
+                                                    <span class="goals" >
+                                                        <b style="font-size: 10px;">
+                                                        
+                                                    </span>
+
+                                                   
+                                                </div>
+                                                <div class="goals-result">
+                                                    <a href=""  style="width: 150px;">
+                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T2.0.Img}}" alt="">
+                                                        {{game.T2.0.Nm}}
+                                                    </a>
+                                                    <span class="goals" >
+                                                        <b style="font-size: 10px;">
+                                                        
+                                                    </span>
+
+                                                    
+                                                </div>
+                                                <div class="goals-result">
+                                                    {% comment %} <a href="" style="width: 150px;">
+                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T1.0.Img}}" alt="">
+                                                        {{game.T1.0.Nm}}
+                                                    </a>
+                                                
+                                                    <span class="goals" >
+                                                        <b>vs</b> 
+                                                        
+                                                    </span>
+
+                                                    <a href=""  style="width: 150px;">
+                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T2.0.Img}}" alt="">
+                                                        {{game.T2.0.Nm}}
+                                                    </a> {% endcomment %}
+                                                </div>
+                                                {% endfor %}
+                                            </li>  
+                                        </ul>
+                                    </div>
+                                </div>  
+
+                                {% comment %} {% for game in Fixtures %}
+                                
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="https://lsm-static-prod.livescore.com/medium/{{game.T1.0.Img}}" alt="icon">
+                                            <strong>{{game.T1.0.Nm}}</strong><br>
+                                            <small class="meta-text">{{Competion_name}}</small>
+                                        </td>
+                                        <td class="text-center">Vs</td>
+                                        <td>
+                                            <img src="https://lsm-static-prod.livescore.com/medium/{{game.T2.0.Img}}" alt="icon1">
+                                            <strong>{{game.T2.0.Nm}}</strong><br>
+                                            <small class="meta-text">{{Competion_name}}</small> 
+                                        </td>
+                                        <td>
+                                            {{game.Esd}}<br>
+                                            <small class="meta-text">{{game.Eps}}</small>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                {% endfor %} {% endcomment %}
+
+                                {% elif 'results' in request.path %}
+
+                                <div class="recent-results " >   
+                                    <div class="info-results"> 
+                                        <ul>    
+                                            <li>
+                                                <span class="head" style="color: #01d099;">
+                                                    Results<span class="date">27 Jun 2017</span>
+                                                </span>
+                                                {% for game in Results %}
+                                                <div class="goals-result">
+                                                    <a href="{% url 'basketball_singleResult' game.Eid %}" style="width: 150px;">
+                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T1.0.Img}}" alt="">
+                                                        {{game.T1.0.Nm}}
+                                                    </a>
+                                                
+                                                    <span class="goals" >
+                                                        <b style="font-size: 10px;">{{game.Tr1}}</b> 
+                                                       
+                                                    </span>
+                                                </div>
+                                                <div class="goals-result">
+                                                    <a href="{% url 'basketball_singleResult' game.Eid %}"  style="width: 150px;">
+                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T2.0.Img}}" alt="">
+                                                        {{game.T2.0.Nm}}
+                                                    </a>
+                                                
+                                                    <span class="goals" >
+                                                        <b style="font-size: 10px;">{{game.Tr2}}</b> 
+                                                       
+                                                    </span>
+
+                                                   
+                                                </div>
+                                                <div class="goals-result">
+                                                    {% comment %} <a href="{% url 'basketball_singleResult' game.Eid %}" style="width: 150px;">
+                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T1.0.Img}}" alt="">
+                                                        {{game.T1.0.Nm}}
+                                                    </a>
+                                                
+                                                    <span class="goals" >
+                                                        <b style="font-size: 10px;">{{game.Tr1}}</b> 
+                                                       
+                                                    </span>
+
+                                                    <a href="{% url 'basketball_singleResult' game.Eid %}"  style="width: 150px;">
+                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T2.0.Img}}" alt="">
+                                                        {{game.T2.0.Nm}}
+                                                    </a> {% endcomment %}
+                                                </div>
+                                                {% endfor %}
+                                            </li>  
+                                        </ul>
+                                    </div>
+                                </div> 
+
+                                {% comment %} {% for game in Results %}
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="https://lsm-static-prod.livescore.com/medium/{{game.T1.0.Img}}" alt="icon">
+                                            <strong>{{game.T1.0.Nm}}</strong><br>
+                                            <strong>{{game.Tr1}}</strong><br>
+                                            <small class="meta-text">{{Competion_name}}</small>
+                                        </td>
+                                        <td class="text-center">Vs</td>
+                                        <td>
+                                            <img src="https://lsm-static-prod.livescore.com/medium/{{game.T2.0.Img}}" alt="icon1">
+                                            <strong>{{game.T2.0.Nm}}</strong><br>
+                                            <strong>{{game.Tr2}}</strong><br>
+                                            <small class="meta-text">{{Competion_name}}</small> 
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                {% endfor %} {% endcomment %}
+                                
+                                {% else %}
+                                {% include 'table-point.html' %}
+                                {% endif %}
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="section-newsletter">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <h2>Enter your e-mail and <span class="text-resalt">subscribe</span> to our newsletter.</h2>
+                                    <p>Duis non lorem porta,  eros sit amet, tempor sem. Donec nunc arcu, semper a tempus et, consequat.</p>
+                                </div>
+                                <form id="newsletterForm" action="http://html.iwthemes.com/sportscup/run/php/mailchip/newsletter-subscribe.php">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-envelope"></i>
+                                                </span>
+                                                <input class="form-control" placeholder="Your Name" name="name"  type="text" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="fa fa-envelope"></i>
+                                                </span>
+                                                <input class="form-control" placeholder="Your  Email" name="email"  type="email" required="required">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-primary" type="submit" name="subscribe" >SIGN UP</button>
+                                                 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div id="result-newsletter"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Newsletter -->
+            </section>
+            <!-- End Section Area -  Content Central -->
+
+            <div class="instagram-btn">
+                <div class="btn-instagram">
+                    <i class="fa fa-instagram"></i>
+                    FOLLOW
+                    <a href="https://www.instagram.com/fifaworldcup/" target="_blank">&#64;fifaworldcup</a>
+                </div>
+            </div>
+
+            <div class="content-instagram">
+                <div id="instafeed"></div>
+            </div>
+
+        </div>
+             <!-- jQuery local-->
+             <script type="text/javascript" src="assets/js/jquery.js"></script>
+             <!-- popper.js-->
+             <script type="text/javascript" src="assets/js/popper.min.js"></script>
+             <!-- bootstrap.min.js-->
+             <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+             <!-- required-scripts.js-->
+             <script type="text/javascript" src="assets/js/theme-scripts.js"></script>
+             <!-- theme-main.js-->
+             <script type="text/javascript" src="assets/js/theme-main.js"></script>
+    </body>
+{% endblock %}

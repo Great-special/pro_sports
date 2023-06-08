@@ -1,0 +1,458 @@
+
+{% if 'england' in request.path and 'premier-league' in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "england" "premier-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "england" "premier-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "england" "premier-league" %}">Tables</a>
+
+{% elif 'england' in request.path and "championship" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "england" "championship" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "england" "championship" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "england" "championship" %}">Table</a>
+
+{% elif 'england' in request.path and "league-1" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "england" "league-1" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "england" "league-1" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "england" "league-1" %}">Table</a>
+
+{% elif 'england' in request.path and "league-2" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "england" "league-2" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "england" "league-2" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "england" "league-2" %}">Table</a>
+
+{% elif 'england' in request.path and "efl-cup" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "england" "efl-cup" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "england" "efl-cup" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "england" "efl-cup" %}">Table</a>
+
+{% elif 'england' in request.path and "fa-cup" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "england" "fa-cup" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "england" "fa-cup" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "england" "fa-cup" %}">Table</a>
+
+{% elif 'england' in request.path and "national-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "england" "national-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "england" "national-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "england" "national-league" %}">Table</a>
+
+{% elif 'england' in request.path and "national-league-north" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "england" "national-league-north" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "england" "national-league-north" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "england" "national-league-north" %}">Table</a>
+
+{% elif 'england' in request.path and "national-league-south" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "england" "national-league-south" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "england" "national-league-south" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "england" "national-league-south" %}">Table</a>
+
+{% elif 'spain' in request.path and "laliga-santander" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "spain" "laliga-santander" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "spain" "laliga-santander" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "spain" "laliga-santander" %}">Table</a>
+
+{% elif 'spain' in request.path and "copa-del-rey-final" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "spain" "copa-del-rey-final" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "spain" "copa-del-rey-final" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "spain" "copa-del-rey-final" %}">Table</a>
+
+{% elif 'spain' in request.path and "copa-del-rey-semi-final" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "spain" "copa-del-rey-semi-final" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "spain" "copa-del-rey-semi-final" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "spain" "copa-del-rey-semi-final" %}">Table</a>
+
+{% elif 'spain' in request.path and "copa-del-rey-quarter-final" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "spain" "copa-del-rey-quarter-final" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "spain" "copa-del-rey-quarter-final" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "spain" "copa-del-rey-quarter-final" %}">Table</a>
+
+{% elif 'spain' in request.path and "super-cup" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "spain" "super-cup" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "spain" "super-cup" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "spain" "super-cup" %}">Table</a>
+
+{% elif 'spain' in request.path and "primera-division-rfef-group-1" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "spain" "primera-division-rfef-group-1" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "spain" "primera-division-rfef-group-1" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "spain" "primera-division-rfef-group-1" %}">Table</a>
+
+{% elif 'spain' in request.path and "primera-division-rfef-group-2" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "spain" "primera-division-rfef-group-2" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "spain" "primera-division-rfef-group-2" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "spain" "primera-division-rfef-group-2" %}">Table</a>
+
+{% elif 'italy' in request.path and "seria-a" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "italy" "seria-a" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "italy" "seria-a" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "italy" "seria-a" %}">Table</a>
+
+{% elif 'italy' in request.path and "seria-b" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "italy" "seria-b" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "italy" "seria-b" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "italy" "seria-b" %}">Table</a>
+
+{% elif 'italy' in request.path and "seria-c-group-a" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "italy" "seria-c-group-a" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "italy" "seria-c-group-a" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "italy" "seria-c-group-a" %}">Table</a>
+
+{% elif 'italy' in request.path and "seria-c-group-b" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "italy" "seria-c-group-b" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "italy" "seria-c-group-b" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "italy" "seria-c-group-b" %}">Table</a>
+
+{% elif 'italy' in request.path and "seria-c-group-c" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "italy" "seria-c-group-c" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "italy" "seria-c-group-c" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "italy" "seria-c-group-c" %}">Table</a>
+
+{% elif 'italy' in request.path and "super-cup" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "italy" "super-cup" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "italy" "super-cup" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "italy" "super-cup" %}">Table</a>
+
+{% elif 'italy' in request.path and "coppa-italia-final" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "italy" "coppa-italia-final" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "italy" "coppa-italia-final" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "italy" "coppa-italia-final" %}">Table</a>
+
+{% elif 'germany' in request.path and "bundesliga" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "germany" "bundesliga" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "germany" "bundesliga" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "germany" "bundesliga" %}">Table</a>
+
+{% elif 'germany' in request.path and "2-bundesliga" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "germany" "2-bundesliga" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "germany" "2-bundesliga" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "germany" "2-bundesliga" %}">Table</a>
+
+{% elif 'germany' in request.path and "3-liga" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "germany" "3-liga" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "germany" "3-liga" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "germany" "3-liga" %}">Table</a>
+
+{% elif 'germany' in request.path and "dfl-super-cup" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "germany" "dfl-super-cup" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "germany" "dfl-super-cup" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "germany" "dfl-super-cup" %}">Table</a>
+
+{% elif 'germany' in request.path and "dfb-cup" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "germany" "dfb-cup" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "germany" "dfb-cup" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "germany" "dfb-cup" %}">Table</a>
+
+{% elif 'germany' in request.path and "regionalliga-bayern" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "germany" "regionalliga-bayern" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "germany" "regionalliga-bayern" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "germany" "regionalliga-bayern" %}">Table</a>
+
+{% elif 'germany' in request.path and "regionalliga-nord" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "germany" "regionalliga-nord" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "germany" "regionalliga-nord" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "germany" "regionalliga-nord" %}">Table</a>
+
+{% elif 'france' in request.path and "ligue-1" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "france" "ligue-1" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "france" "ligue-1" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "france" "ligue-1" %}">Table</a>
+
+{% elif 'france' in request.path and "ligue-2" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "france" "ligue-2" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "france" "ligue-2" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "france" "ligue-2" %}">Table</a>
+
+{% elif 'france' in request.path and "coupe-de-france" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "france" "coupe-de-france" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "france" "coupe-de-france" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "france" "coupe-de-france" %}">Table</a>
+
+{% elif 'france' in request.path and "championat-national" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "france" "championat-national" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "france" "championat-national" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "france" "championat-national" %}">Table</a>
+
+{% elif 'france' in request.path and "womens-division-1" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "france" "womens-division-1" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "france" "womens-division-1" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "france" "womens-division-1" %}">Table</a>
+
+{% elif 'holland' in request.path and "eredivisie" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "holland" "eredivisie" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "holland" "eredivisie" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "holland" "eredivisie" %}">Table</a>
+
+{% elif 'holland' in request.path and "eerste-divisie" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "holland" "eerste-divisie" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "holland" "eerste-divisie" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "holland" "eerste-divisie" %}">Table</a>
+
+{% elif 'holland' in request.path and "super-cup" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "holland" "super-cup" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "holland" "super-cup" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "holland" "super-cup" %}">Table</a>
+
+{% elif 'holland' in request.path and "tweede-divisie" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "holland" "tweede-divisie" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "holland" "tweede-divisie" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "holland" "tweede-divisie" %}">Table</a>
+
+{% elif 'scotland' in request.path and "premiership" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "scotland" "premiership" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "scotland" "premiership" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "scotland" "premiership" %}">Table</a>
+
+{% elif 'scotland' in request.path and "championship" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "scotland" "championship" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "scotland" "championship" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "scotland" "championship" %}">Table</a>
+
+{% elif 'scotland' in request.path and "league-1" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "scotland" "league-1" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "scotland" "league-1" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "scotland" "league-1" %}">Table</a>
+
+{% elif 'scotland' in request.path and "league-2" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "scotland" "league-2" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "scotland" "league-2" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "scotland" "league-2" %}">Table</a>
+
+{% elif 'scotland' in request.path and "scottish-cup" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "scotland" "scottish-cup" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "scotland" "scottish-cup" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "scotland" "scottish-cup" %}">Table</a>
+
+{% elif 'scotland' in request.path and "challenge-cup" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "scotland" "challenge-cup" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "scotland" "challenge-cup" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "scotland" "challenge-cup" %}">Table</a>
+
+{% elif 'denmark' in request.path and "superliga" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "denmark" "superliga" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "denmark" "superliga" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "denmark" "superliga" %}">Table</a>
+
+{% elif 'denmark' in request.path and "1-division" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "denmark" "1-division" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "denmark" "1-division" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "denmark" "1-division" %}">Table</a>
+
+{% elif 'austria' in request.path and "bundesliga" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "austria" "bundesliga" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "austria" "bundesliga" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "austria" "bundesliga" %}">Table</a>
+
+{% elif 'austria' in request.path and "2-liga" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "austria" "2-liga" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "austria" "2-liga" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "austria" "2-liga" %}">Table</a>
+
+{% elif 'czech-republic' in request.path and "1-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "czech-republic" "1-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "czech-republic" "1-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "czech-republic" "1-league" %}">Table</a>
+
+{% elif 'czech-republic' in request.path and "2-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "czech-republic" "2-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "czech-republic" "2-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "czech-republic" "2-league" %}">Table</a>
+
+{% elif 'croatia' in request.path and "hnl" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "croatia" "hnl" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "croatia" "hnl" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "croatia" "hnl" %}">Table</a>
+
+{% elif 'croatia' in request.path and "prva-nl" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "croatia" "prva-nl" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "croatia" "prva-nl" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "croatia" "prva-nl" %}">Table</a>
+
+{% elif 'cyprus' in request.path and "1-divisie" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "cyprus" "1-divisie" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "cyprus" "1-divisie" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "cyprus" "1-divisie" %}">Table</a>
+
+{% elif 'cyprus' in request.path and "2-divisie" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "cyprus" "2-divisie" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "cyprus" "2-divisie" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "cyprus" "2-divisie" %}">Table</a>
+
+{% elif 'egypt' in request.path and "premier-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "egypt" "premier-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "egypt" "premier-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "egypt" "premier-league" %}">Table</a>
+
+{% elif 'nigeria' in request.path and "npfl-group-a" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "nigeria" "npfl-group-a" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "nigeria" "npfl-group-a" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "nigeria" "npfl-group-a" %}">Table</a>
+
+{% elif 'nigeria' in request.path and "npfl-group-b" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "nigeria" "npfl-group-b" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "nigeria" "npfl-group-b" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "nigeria" "npfl-group-b" %}">Table</a>
+
+{% elif 'turkey' in request.path and "super-lig" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "turkey" "super-lig" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "turkey" "super-lig" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "turkey" "super-lig" %}">Table</a>
+
+{% elif 'turkey' in request.path and "1st-lig" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "turkey" "1st-lig" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "turkey" "1st-lig" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "turkey" "1st-lig" %}">Table</a>
+
+{% elif 'belarus' in request.path and "premier-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "belarus" "premier-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "belarus" "premier-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "belarus" "premier-league" %}">Table</a>
+
+{% elif 'belarus' in request.path and "1-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "belarus" "1-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "belarus" "1-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "belarus" "1-league" %}">Table</a>
+
+{% elif 'belgium' in request.path and "first-division-a" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "belgium" "first-division-a" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "belgium" "first-division-a" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "belgium" "first-division-a" %}">Table</a>
+
+{% elif 'belgium' in request.path and "first-division-b" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "belgium" "first-division-b" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "belgium" "first-division-b" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "belgium" "first-division-b" %}">Table</a>
+
+{% elif 'botswana' in request.path and "premier-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "botswana" "premier-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "botswana" "premier-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "botswana" "premier-league" %}">Table</a>
+
+{% elif 'brazil' in request.path and "serie-a" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "brazil" "serie-a" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "brazil" "serie-a" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "brazil" "serie-a" %}">Table</a>
+
+{% elif 'brazil' in request.path and "serie-b" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "brazil" "serie-b" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "brazil" "serie-b" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "brazil" "serie-b" %}">Table</a>
+
+{% elif 'china' in request.path and "super-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "china" "super-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "china" "super-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "china" "super-league" %}">Table</a>
+
+{% elif 'china' in request.path and "china-league-one" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "china" "china-league-one" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "china" "china-league-one" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "china" "china-league-one" %}">Table</a>
+
+{% elif 'ghana' in request.path and "premier-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "ghana" "premier-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "ghana" "premier-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "ghana" "premier-league" %}">Table</a>
+
+{% elif 'greece' in request.path and "super-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "greece" "super-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "greece" "super-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "greece" "super-league" %}">Table</a>
+
+{% elif 'greece' in request.path and "football-league" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "greece" "football-league" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "greece" "football-league" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "greece" "football-league" %}">Table</a>
+
+{% elif 'korea-republic' in request.path and "k-league-1" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "korea-republic" "k-league-1" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "korea-republic" "k-league-1" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "korea-republic" "k-league-1" %}">Table</a>
+
+{% elif 'korea-republic' in request.path and "k-league-2" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "korea-republic" "k-league-2" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "korea-republic" "k-league-2" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "korea-republic" "k-league-2" %}">Table</a>
+
+{% elif 'usa' in request.path and "major-league-soccer" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "usa" "major-league-soccer" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "usa" "major-league-soccer" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "usa" "major-league-soccer" %}">Table</a>
+
+{% elif 'usa' in request.path and "usl-championship" in request.path %}
+
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'resultsByleague' "usa" "usl-championship" %}">Results</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'fixturesByleague' "usa" "usl-championship" %}">Fixtures</a>
+<a class="btn btn-info" style="background-color: #01d099;" href="{% url 'tablesByleague' "usa" "usl-championship" %}">Table</a>
+
+{% endif %}

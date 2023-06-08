@@ -1,0 +1,62 @@
+
+
+          
+<section class="content-info">
+
+    <div class="container paddings-mini">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table-striped table-responsive table-hover result-point">
+                    <thead class="point-table-head">
+                        <tr>
+                            <th class="text-left">No</th>
+                            <th class="text-left">TEAM</th>
+                            <th class="text-center">P</th>
+                            <th class="text-center">W</th>
+                            <th class="text-center">D</th>
+                            <th class="text-center">L</th>
+                            <th class="text-center">GS</th>
+                            <th class="text-center">GA</th>
+                            <th class="text-center">GD</th>
+                            <th class="text-center">PTS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-center">
+                        {% for stage in stages %}
+                        {% for row in stage.LeagueTable.L.0.Tables %}
+                            {% if row.LTT == 1 %}
+                            {% for team in row.team %}
+                                <tr>
+                                    <td class="text-left number"> 
+                                        {{team.rnk}} 
+                                        {% if team.rnk <= 4 %}
+                                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-left">
+                                        <img src="https://lsm-static-prod.livescore.com/medium/{{team.Img}}" alt="{{team.Tnm}}"><span>{{team.Tnm}}</span>
+                                    </td>
+                                    <td>{{team.pld}}</td>
+                                    <td>{{team.win}}</td>
+                                    <td>{{team.drw}}</td>
+                                    <td>{{team.lst}}</td>
+                                    <td>{{team.gf}}</td>
+                                    <td>{{team.ga}}</td>
+                                    <td>{{team.gd}}</td>
+                                    <td>{{team.pts}}</td>
+                                </tr>
+                            {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Section Area -  Content Central -->
+
+

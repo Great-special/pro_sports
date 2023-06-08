@@ -1,0 +1,17 @@
+
+
+
+<h3>
+    {% for stage in stages %}
+
+       
+       {% for row in stage.LeagueTable.L.0.Tables %}
+            {% if row.LTT == 1 %}
+                {% for team in row.team %}
+                    <p> {{team.rnk}}  {{team.Tnm}} - {{team.pld}} - {{team.win}} - {{team.drw}} - {{team.lst}} - {{team.gf}} - {{team.ga}} - {{team.gd}} - {{team.pts}}</p>
+                {% endfor %}
+            {% endif %}
+       {% endfor %}
+    
+    {% endfor %}
+</h3>

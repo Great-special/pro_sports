@@ -1,0 +1,210 @@
+
+{% extends 'base.html' %}
+{% load fontawesome_5 %}
+{% load static %}
+
+        <!-- layout-->
+        {% block content%}
+
+        <div id="layout">
+
+            <!-- Header-->
+            {% include 'header.html'%}
+            <!-- Header end-->
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+                <!-- White Section -->
+                <div class="paddings" style="background:url({% static 'img/slide/1.jpg' %}); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100vh; ">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Section Area - Content Central -->
+                            <div class="col-lg-8">
+                                <section class="content-info">
+                                    
+                                    <div class="container">
+                                        <div class="row">
+                                            
+                                            {% include "side nav.html" %}
+                                     
+                                            {% if not fixtures %}
+                                            <div class="col-lg-8">
+                                                <section class="content-info">
+                                                    <div class="container"> 
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                {% for st in today_data %} 
+                                                                <div class="recent-results " >   
+                                                                    <div class="info-results">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <span class="head">
+                                                                                    <a href="{% url 'fixturesByleague' st.Ccd st.Scd %}">
+                                                                                        <strong>{{st.Snm}}<span class="date">{{st.Events.0.Eps}}</span></strong>
+                                                                                    </a>
+                                                                                </span>
+                                                                            
+                                                                                {% for game in st.Events %}
+                                                                                <div class="goals-result">
+                                                                                    <a href="{% url 'singleResult' game.Eid %}">
+                                                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T1.0.Img}}" alt="">
+                                                                                        {{game.T1.0.Nm}}
+                                                                                    </a>
+                                                                                    
+                                                                                    <span class="goals" >
+                                                                                        <b style="font-size: 10px;">{{game.Tr1}}</b>
+                                                                                    
+                                                                                    </span>
+                                    
+                                                                                    
+                                                                                    {% comment %} <a >{% fa5_icon 'star' %}</a> {% endcomment %}
+                                                                                </div>
+                                                                                <div class="goals-result">
+                                                                                    <a href="{% url 'singleResult' game.Eid %}" >
+                                                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{game.T2.0.Img}}" alt="">
+                                                                                        {{game.T2.0.Nm}}
+                                                                                    </a>
+                                                                                    <span class="goals" >
+                                                                                        <b style="font-size: 10px;">{{game.Tr2}}</b>
+                                                                                    
+                                                                                    </span>                              
+                                                                                
+                                                                                </div>
+                                                                                <hr style="border: 1px solid #121212;">
+                                                                                {% endfor %}
+                                                                            </li>
+                                                                            
+                                                                        </ul>
+                                                                        
+                                                                    </div>
+                                                                </div>  
+                                                                {% endfor %}
+                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            {% else %}
+                                            <div class="col-lg-8">
+                                                <div class="recent-results " >   
+                                                        <div class="info-results"> 
+                                                            <ul>    
+                                                                <li>
+                                                                    {% for game in fixtures %}
+                                                                    <span class="head">
+                                                                        Fixtures
+                                                                    
+                                                                        <span class="date">{{game.Esd}}</span>
+                                                                    </span>
+                                                                    
+                                                                    <div class="goals-result">
+                                                                        <a href="" style="width: 150px;">
+                                                                            <img src="https://lsm-static-prod.livescore.com/medium/{{game.T1.0.Img}}" alt="">
+                                                                            {{game.T1.0.Nm}}
+                                                                        </a>
+                                                                    
+                                                                        <span class="goals" >
+                                                                            <b>vs</b> 
+                                                                            {% comment %} <a href="single-result.html" class="btn theme">View More</a> {% endcomment %}
+                                                                        </span>
+
+                                                                        <a href=""  style="width: 150px;">
+                                                                            <img src="https://lsm-static-prod.livescore.com/medium/{{game.T2.0.Img}}" alt="">
+                                                                            {{game.T2.0.Nm}}
+                                                                        </a>
+
+                                                                    
+                                                                        <a href="{% url 'liked' game.Eid %}" >{% fa5_icon 'star' %}</a>
+                                                                        
+                                                                    </div>
+                                                                    {% endfor %}
+                                                                </li>  
+                                                            </ul>
+                                                        </div>
+                                                </div>  
+
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    
+                                </section>
+                            </div>
+                            <!-- End Section Area -  Content Central -->
+
+                            <div class="col-lg-4">
+                                <!-- Point Table -->
+                                <div class="panel-box">
+
+                                    <div class="titles no-margin border-0">
+                                        <h4>Premier League Table</h4>
+                                    </div>
+
+                                    <table class="table-striped table-responsive table-hover result-point small">
+                                        <thead class="point-table-head">
+                                            <tr>
+                                                <th class="text-left">No</th>
+                                                <th class="text-left">TEAM</th>
+                                                <th class="text-center">P</th>
+                                                <th class="text-center">W</th>
+                                                <th class="text-center">D</th>
+                                                <th class="text-center">PTS</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody class="text-center">
+                                            {% for stage in stages %}
+                                                {% for row in stage.LeagueTable.L.0.Tables %}
+                                                    {% if row.LTT == 1 %}
+                                                        {% for team in row.team %}
+                                                            <tr>
+                                                                <td class="text-left number">
+                                                                    {{team.rnk}}
+
+                                                                    {% if team.rnk <= 4 %}
+                                                                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                                                    {% endif %}
+                                                                    
+                                                                </td>
+                                                                <td class="text-left">
+                                                                <a href="#">
+                                                                        <img src="https://lsm-static-prod.livescore.com/medium/{{team.Img}}" alt="{{team.Tnm}}"><span>{{team.Tnm}}</span>
+                                                                    </a>
+                                                                </td>
+                                                                <td>{{team.pld}}</td>
+                                                                <td>{{team.win}}</td>
+                                                                <td>{{team.drw}}</td>
+                                                                <td>{{team.pts}}</td>
+                                                            </tr>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endfor %}
+
+                                          </tbody>
+                                    </table>
+                                     <a href="{% url 'tablesByleague' "england" "premier-league" %}" class="btn-iw full no-margin">View Full Table</a>
+                                </div>
+                                <!-- End Point Table -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End White Section -->
+
+                
+            </section>
+            <!-- End Section Area -  Content Central -->
+
+            <!-- footer-->
+            {% include 'footer.html'%}
+            <!-- End footer-->
+        </div>
+
+        {% endblock %}
+        <!-- End layout-->
+
+
+
+
+

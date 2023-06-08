@@ -1,0 +1,35 @@
+Step 1: Sign up for a football livescore API service
+To connect your Django app to a football livescore API service, you will need to sign up for an API service that provides real-time data for match results and fixture information. Some of the popular options include Sportmonks, Football-API, and LiveScore.
+
+Step 2: Obtain the API key
+Once you have signed up for a service, you will need to obtain an API key that allows you to access the data. This key usually comes in the form of a string of characters that you will need to include in your API requests.
+
+Step 3: Install the requests package
+To make API requests in your Django app, you will need to install the requests package by running the command pip install requests in your terminal.
+
+Step 4: Create a new Django app
+Create a new Django app using the command python manage.py startapp app_name, where app_name is the name of your app. This will create a new directory with the same name as your app.
+
+Step 5: Implement the API calls in your Django app
+In your Django app, create a new Python file and import the requests package. Then, implement the API calls to fetch the match results and fixture information from the football livescore API service. You will need to include the API key in your API requests to authenticate yourself.
+
+Step 6: Parse the API response data
+Once you have received the response from the API service, you will need to parse the data using the appropriate JSON parsing methods. Depending on the API service, the response data may vary in structure, so you will need to adapt your parsing methods accordingly.
+
+Step 7: Create Django models to store the data
+To store the match results and fixture information in your Django app, you will need to create Django models that represent the data structure. You can use Django's built-in ORM to create models that correspond to the data fields returned by the API service.
+
+Step 8: Save the data to the models
+Finally, you will need to save the data to the Django models using the Django ORM. This will allow you to retrieve the data and display it in your Django app's views.
+
+With these steps, you should be able to connect your Django app to a football livescore API service and retrieve real-time match results and fixture information.
+
+
+
+
+
+
+
+
+CREATE PLUGGABLE DATABASE hr USING 'C:\Users\User\AppData\Local\Temp\hr.txt'
+FILE_NAME_CONVERT=('C:\Users\User\AppData\Local\Temp\','C:\app\oracle\product\21c\oradata\XE\hr\');

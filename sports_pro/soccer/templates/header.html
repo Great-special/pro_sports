@@ -1,0 +1,114 @@
+{% load static %}
+{% load fontawesome_5 %}
+<!-- Header-->
+<header class="header-3" style="background-color: #222;">
+   <!-- End headerbox-->
+   <div class="headerbox">
+       <div class="container">
+           <div class="row justify-content-between align-items-center">
+               <!-- Logo-->
+               <div class="col col-xl-12 text-center">
+                  <div class="logo">
+                      <a href="index.html" title="Return Home">
+                           <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo_img">
+                       </a>
+                  </div>
+               </div>
+               <!-- End Logo-->
+
+               <!-- Adds Header-->
+               <div class="col col-xl-12">
+                   <!-- Call Nav Menu-->
+                   <a class="mobile-nav" href="#mobile-nav" style="color: white;">{% fa5_icon 'bars' %}</a>
+                   <!-- End Call Nav Menu-->
+               </div>
+               <!-- End Adds Header-->
+           </div>
+       </div>
+   </div>
+   <!-- End headerbox-->
+
+   <!-- mainmenu-->
+   <nav class="mainmenu" style="background-color: #222;">
+       <div class="container">
+           <!-- Menu-->
+           <ul class="sf-menu" id="menu">
+               <li class="current">
+                   <a href="{% url 'home' %}" style="color: white;">Home</a>
+               </li>
+
+               <li class="current">
+                   <a href="{% url 'live' %}" style="color: white;">Live</a>
+               </li>
+               
+               <li class="current">
+                   <a href="{% url 'soccer' %}" style="color: white;">Soccer</a>
+               </li>
+
+                <li class="current">
+                    <a href="{% url 'favourite' %}" style="color: white;">Favorites</a>
+                </li>
+
+              {% comment %} <li>
+                   <a href="{% url 'fixturesByleague' 'england' 'premier-league' %}" style="color: white;">Soccer Leagues</a>
+               </li>
+
+               <li>
+                   <a href="{% url 'resultsBycompetion' 'champions-league' 'group-b' %}" style="color: white;">Soccer Competions</a>
+               </li>  {% endcomment %}
+
+               <li>
+                   <a href="{% url 'basketball' %}" style="color: white;">Basketball</a>
+               </li>
+               <li>
+                   <a href="" style="color: white;">Predictions</a>
+               </li>
+               <li>
+                   <a href="{% url 'news_post' %}" style="color: white;">News</a>
+               </li>
+               
+           </ul>
+           <!-- End Menu-->
+       </div>
+   </nav>
+   <!-- End mainmenu-->
+</header>
+<!-- End Header-->
+
+<!-- Mobile Nav-->
+<div id="mobile-nav" style="background-color: #222;">
+   <!-- Menu-->
+   <ul>
+       {% comment %} <li class="current">
+           <a href="{% url 'soccer' %}"">Soccer</a>
+       </li> {% endcomment %}
+
+       <li>
+           <a href="{% url 'live' %}" style="color: white;">Live</a>
+       </li>
+
+       <li>
+           <a href="{% url 'favourite' %}" style="color: white;">Favorites</a>
+       </li>
+
+       {% comment %} <li>
+           <a href="{% url 'fixturesByleague' 'england' 'premier-league' %}" style="color: white;">Football Leagues</a>
+       </li>
+
+       <li>
+           <a href="{% url 'resultsBycompetion' 'champions-league' 'group-b' %}" style="color: white;">Football Competions</a>
+       </li> {% endcomment %}
+
+       <li>
+           <a href="{% url 'basketball' %}" style="color: white;">Basketball</a>
+       </li>
+       <li>
+           <a href="" style="color: white;">Predictions</a>
+       </li>
+       <li>
+           <a href="{% url 'news_post' %}" style="color: white;">News</a>
+       </li>
+   </ul>
+   <!-- End Menu-->
+</div>
+<!-- End Mobile Nav-->

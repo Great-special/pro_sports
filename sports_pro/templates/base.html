@@ -1,0 +1,59 @@
+
+{% load static %}
+{% load fontawesome_5 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <title>Sports Pro</title>
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="">
+    <meta name="author" content="iwthemes.com">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Theme CSS -->
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet" media="screen"> {% comment %}
+    <link href="{% static 'assets/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/bootstrap/css/bootstrap.css.map' %}" rel="stylesheet">
+    <link href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/bootstrap/css/bootstrap.min.css.map' %}" rel="stylesheet">
+    <link href="{% static 'assets/bootstrap/css/bootstrap.rtl.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/bootstrap/css/bootstrap.rtl.css.map' %}" rel="stylesheet">
+    <link href="{% static 'assets/bootstrap/css/bootstrap.rtl.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/bootstrap/css/bootstrap-grid.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}" rel="stylesheet"> {% endcomment %} {% fontawesome_5_static %}
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'img/icons/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/icons/apple-touch-icon.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/icons/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/icons/apple-touch-icon-114x114.png' %}">
+</head>
+
+<body>
+    <!-- layout-->
+    {% block content %} 
+    
+    {% endblock %}
+    <!-- End layout-->
+
+    <!-- ======================= JQuery libs =========================== -->
+    <!-- jQuery local-->
+
+    <script type="text/javascript" src="{% static 'assets/js/jquery.js' %}"></script>
+    <!-- popper.js-->
+    <script type="text/javascript" src="{% static 'assets/js/popper.min.js' %}"></script>
+    <!-- bootstrap.min.js-->
+    <script type="text/javascript" src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- required-scripts.js-->
+    <script type="text/javascript" src="{% static 'assets/js/theme-scripts.js' %}"></script>
+    <!-- theme-main.js-->
+    <script type="text/javascript" src="{% static 'assets/js/theme-main.js' %}"></script>
+    <!-- ======================= End JQuery libs =========================== -->
+
+
+</html>
+

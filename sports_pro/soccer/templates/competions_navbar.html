@@ -1,0 +1,338 @@
+
+{% load fontawesome_5 %}
+
+
+
+<style>
+    .ul,
+    .new-nav {
+        width: 100%;
+    }
+    .nav-mobile{display: none;}
+    .ul {
+        display: flex;
+        gap: 15px;
+        overflow-x: scroll;
+    }
+    .ul::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .ul li {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .ul li p{
+        color: white;
+    }
+    .ul-down {
+        display: none;
+        position: absolute;
+        top: 50px;
+    }
+    
+    .ul-down li {
+        color: white;
+        cursor: pointer;
+        width: 200px;
+        border: 1px grey;
+    }
+    .ul-down li a {
+        color: white;
+    }
+    .ul-down li:hover {
+        background-color: #01d099;
+        color: white;
+    }        
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    @media screen and (max-width: 825px) {
+        .ul{
+            display: none;
+        }
+        .nav-mobile{
+            display: block;
+        }
+    }
+</style>
+<nav class="new-nav" style="background-color: #222;">
+    <ul class="ul">
+        <li>
+            <p>Champions League</p>
+            <ul class="ul-down">
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-a" %}" style="font-size:14px;">Group A</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-b" %}" style="font-size:14px;">Group B</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-c" %}" style="font-size:14px;">Group C</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-d" %}" style="font-size:14px;">Group D</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-e" %}" style="font-size:14px;">Group E</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-f" %}" style="font-size:14px;">Group F</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-g" %}" style="font-size:14px;">Group G</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-h" %}" style="font-size:14px;">Group H</a></li>
+            </ul>
+        </li>
+        <li>
+            <p>Europa League</p>
+            <ul class="ul-down">
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-a" %}" style="font-size:14px;">Group A</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-b" %}" style="font-size:14px;">Group B</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-c" %}" style="font-size:14px;">Group C</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-d" %}" style="font-size:14px;">Group D</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-e" %}" style="font-size:14px;">Group E</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-f" %}" style="font-size:14px;">Group F</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-g" %}" style="font-size:14px;">Group G</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-h" %}" style="font-size:14px;">Group H</a></li> 
+            </ul>
+        </li>
+        <li>
+            <p>African Nations Championship</p>
+
+            <ul class="ul-down">
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-a" %}" style="font-size:14px;">Group A</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-b" %}" style="font-size:14px;">Group B</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-c" %}" style="font-size:14px;">Group C</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-d" %}" style="font-size:14px;">Group D</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-e" %}" style="font-size:14px;">Group E</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-f" %}" style="font-size:14px;">Group F</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-g" %}" style="font-size:14px;">Group G</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-h" %}" style="font-size:14px;">Group H</a></li>
+            </ul>
+        </li>
+        <li>
+            <p>Copa America</p>
+            <ul class="ul-down">
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "group-a" %}" style="font-size:14px;">Group A</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "quarter-finals" %}" style="font-size:14px;">Quarter Finals</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "semi-finals" %}" style="font-size:14px;">Semi Finals</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "third-place-play-off" %}" style="font-size:14px;">Third Place Play off</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "final" %}" style="font-size:14px;">Final</a></li>
+                
+            </ul>
+
+        </li>
+        <li>
+            <p>African Cup Of Nations</p>
+            <ul class="ul-down">
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-a" %}" style="font-size:14px;">Group A</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-b" %}" style="font-size:14px;">Group B</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-c" %}" style="font-size:14px;">Group C</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-d" %}" style="font-size:14px;">Group D</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-e" %}" style="font-size:14px;">Group E</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-f" %}" style="font-size:14px;">Group F</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-g" %}" style="font-size:14px;">Group G</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-h" %}" style="font-size:14px;">Group H</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-i" %}" style="font-size:14px;">Group I</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-j" %}" style="font-size:14px;">Group J</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-k" %}" style="font-size:14px;">Group K</a></li>
+               
+            </ul>
+        </li>
+        <li>
+            <p>CONCACAF Nations</p>
+            <ul class="ul-down">
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-a-group-1" %}" style="font-size:14px;">League A Group 1</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-a-group-2" %}" style="font-size:14px;">League A Group 2</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-a-group-3" %}" style="font-size:14px;">League A Group 3</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-a-group-4" %}" style="font-size:14px;">League A Group 4</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-b-group-1" %}" style="font-size:14px;">League B Group 1</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-b-group-2" %}" style="font-size:14px;">League B Group 2</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-b-group-3" %}" style="font-size:14px;">League B Group 3</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-b-group-4" %}" style="font-size:14px;">League B Group 4</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-c-group-1" %}" style="font-size:14px;">League C Group 1</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-c-group-2" %}" style="font-size:14px;">League C Group 2</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-c-group-3" %}" style="font-size:14px;">League C Group 3</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-c-group-4" %}" style="font-size:14px;">League C Group 4</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "semi-finals" %}" style="font-size:14px;">Semi Finals</a></li>
+              <li><a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "finals" %}" style="font-size:14px;">Final</a></li>
+                
+            </ul>
+        </li>
+        
+       
+        
+    </ul>
+    <script>
+        const li = document.querySelectorAll(".ul li p")
+        const ul = document.querySelector(".ul")
+        const overlay = document.querySelector(".overlay")
+        const drop = document.querySelectorAll(".ul-down")
+        const items = document.querySelectorAll(".ul-down li")
+        const icon = document.querySelector('#bars-icon');
+        const barNav = document.querySelector("#bar-nav")
+
+        for (let i = 0; i < li.length; i++) {
+            drop.forEach(x => x.style.display = 'none');
+            li[i].addEventListener('click', () => {
+                if (drop[i].style.display === 'block') {
+                    drop.forEach(x => x.style.display = 'none');
+                    drop[i].style.display = 'none';
+                    ul.style.height = '50px'
+                } else {
+                    drop.forEach(x => x.style.display = 'none');
+                    drop[i].style.display = 'block';
+                    //console.log(drop[i].clientHeight, drop[i].height)
+                    ul.style.height = `${drop[i].clientHeight + 70}px`
+                }
+            })
+        }
+
+        for (let i = 0; i < items.length; i++) {
+            items[i].addEventListener("click", function() {
+                this.parentElement.style.display = 'none';
+            })
+        }
+        icon.addEventListener('click', () => {
+            console.log('clicked');
+            console.log(document.getElementsByClassName('ul')[0])
+            barNav.innerHTML = document.getElementsByClassName('ul')[0]
+            {% comment %} barNav.appendChild(document.querySelector('.ul')) {% endcomment %}
+        })
+    </script>
+</nav>
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light nav-mobile"  style="background-color: #222;">
+  {% comment %} <a class="navbar-brand" href="#">PythonGuides</a> {% endcomment %}
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent"  style="background-color: #222;">
+      <ul class="navbar-nav mr-auto" >
+          {% comment %} <li class="nav-item active">
+              <a class="nav-link" href="\">Home <span class="sr-only">(current)</span></a>
+          </li> {% endcomment %}
+
+          <!--Champions League-->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                  champions League
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-a" %}" style="font-size:14px;">Group A</a>
+                  <a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-b" %}" style="font-size:14px;">Group B</a>
+                  <a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-c" %}" style="font-size:14px;">Group C</a>
+                  <a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-d" %}" style="font-size:14px;">Group D</a>
+                  <a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-e" %}" style="font-size:14px;">Group E</a>
+                  <a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-f" %}" style="font-size:14px;">Group F</a>
+                  <a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-g" %}" style="font-size:14px;">Group G</a>
+                  <a class="dropdown-item" href="{% url 'resultsBycompetion' "champions-league" "group-h" %}" style="font-size:14px;">Group H</a>
+              </div>
+          </li>
+          
+           <!--Europa League-->
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                Europa League
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-a" %}" style="font-size:14px;">Group A</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-b" %}" style="font-size:14px;">Group B</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-c" %}" style="font-size:14px;">Group C</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-d" %}" style="font-size:14px;">Group D</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-e" %}" style="font-size:14px;">Group E</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-f" %}" style="font-size:14px;">Group F</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-g" %}" style="font-size:14px;">Group G</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "europa-league" "group-h" %}" style="font-size:14px;">Group H</a>
+            </div>
+          </li>
+
+          <!--African Nations Championship-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                African Nations Championship
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-a" %}" style="font-size:14px;">Group A</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-b" %}" style="font-size:14px;">Group B</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-c" %}" style="font-size:14px;">Group C</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-d" %}" style="font-size:14px;">Group D</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-e" %}" style="font-size:14px;">Group E</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-f" %}" style="font-size:14px;">Group F</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-g" %}" style="font-size:14px;">Group G</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "african-nations-championship" "group-h" %}" style="font-size:14px;">Group H</a>
+            </div>
+          </li>
+
+          <!--Copa America-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                Copa America
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "group-a" %}" style="font-size:14px;">Group A</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "quarter-finals" %}" style="font-size:14px;">Quarter Finals</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "semi-finals" %}" style="font-size:14px;">Semi Finals</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "third-place-play-off" %}" style="font-size:14px;">Third Place Play off</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "copa-america" "final" %}" style="font-size:14px;">Final</a>
+            </div>
+          </li>
+
+          <!--African Cup of Nations-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px; color: white;">
+                African Cup of Nations
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-a" %}" style="font-size:14px;">Group A</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-b" %}" style="font-size:14px;">Group B</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-c" %}" style="font-size:14px;">Group C</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-d" %}" style="font-size:14px;">Group D</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-e" %}" style="font-size:14px;">Group E</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-f" %}" style="font-size:14px;">Group F</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-g" %}" style="font-size:14px;">Group G</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-h" %}" style="font-size:14px;">Group H</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-i" %}" style="font-size:14px;">Group I</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-j" %}" style="font-size:14px;">Group J</a>
+              <a class="dropdown-item" href="{% url 'resultsBycompetion' "africa-cup-of-nations-qualification" "qualification-group-k" %}" style="font-size:14px;">Group K</a>
+            </div>
+          </li>
+
+          <!--CONCACAF Nations-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:15px;">
+                CONCACAF Nations
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-a-group-1" %}" style="font-size:14px;">League A Group 1</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-a-group-2" %}" style="font-size:14px;">League A Group 2</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-a-group-3" %}" style="font-size:14px;">League A Group 3</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-a-group-4" %}" style="font-size:14px;">League A Group 4</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-b-group-1" %}" style="font-size:14px;">League B Group 1</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-b-group-2" %}" style="font-size:14px;">League B Group 2</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-b-group-3" %}" style="font-size:14px;">League B Group 3</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-b-group-4" %}" style="font-size:14px;">League B Group 4</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-c-group-1" %}" style="font-size:14px;">League C Group 1</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-c-group-2" %}" style="font-size:14px;">League C Group 2</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-c-group-3" %}" style="font-size:14px;">League C Group 3</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "league-c-group-4" %}" style="font-size:14px;">League C Group 4</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "semi-finals" %}" style="font-size:14px;">Semi Finals</a>
+                <a class="dropdown-item" href="{% url 'resultsBycompetion' "concacaf-nations-league" "finals" %}" style="font-size:14px;">Final</a>
+            </div>
+          </li>
+      </ul>
+  </div>
+
+</nav>
+  

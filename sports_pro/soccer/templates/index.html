@@ -1,0 +1,18 @@
+
+
+
+<h4>List Of Live Matches</h4>
+
+{% for l in stages %}
+    <h3>Stage Name: {{l.Snm}}</h3>
+    <h5>Competition Name: {{l.CompN}}  |  Country Name {{l.Cnm}}</h5>
+    
+    {% for o in  l.Events %}
+        <h4>Teams: <img src="https://lsm-static-prod.livescore.com/medium/{{o.T1.0.Img}}"> {{o.T1.0.Nm}} Vs <img src="https://lsm-static-prod.livescore.com/medium/{{o.T2.0.Img}}"> {{o.T2.0.Nm}}</h4>
+        <h4>Score: {{o.Tr1}} Vs {{o.Tr2}}</h4>
+        <h5>Time Status: {{o.Eps}}</h5>
+    {% endfor %}
+
+{% endfor %}
+
+<h4>List Of  Fixture</h4>
